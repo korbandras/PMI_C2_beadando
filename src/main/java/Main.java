@@ -240,7 +240,8 @@ public class Main
     /**
      * Sub-program of avg(), returns the number of grades you have in the grades.xml
      */
-    private static double gradesNo() {
+    private static double gradesNo()
+    {
         double No = 0;
         try
         {
@@ -410,13 +411,21 @@ public class Main
     }
 
     /**
-     * Sub-program of addNewGrade(), this adds the credit value, makes sure it is an integer.
+     * Sub-program of addNewGrade(), this adds the credit value,
+     * makes sure it is an integer between 0 and 9, maximum and
+     * minimum credit values on PTE.
      */
     private static int inputCrd()
     {
-
-        out.print("Enter the credit value of new subject: ");
-        return be.nextInt();
+        int crd;
+        out.print("Enter credit value of new subject: ");
+        crd = be.nextInt();
+        while(crd < 0 || crd > 9)
+        {
+            out.print("Credit value invalid. Please reenter the value: ");
+            crd = be.nextInt();
+        }
+        return crd;
     }
 
     /**
@@ -424,8 +433,10 @@ public class Main
      */
     private static String inputSub()
     {
-        out.print("Enter new subject: ");
-        return be.nextLine();
+        String sub;
+        out.print("Name of new subject:");
+        sub = be.nextLine();
+        return sub;
     }
 
     /**
