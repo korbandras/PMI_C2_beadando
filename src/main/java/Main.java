@@ -16,14 +16,13 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static java.lang.System.in;
 import static java.lang.System.out;
 
 public class Main
 {
 
     private static final Scanner be = new Scanner(System.in);
-    private static final String filepath = "src/main/resources/grades.xml";
+    private static final String file = "src/main/resources/grades.xml";
 
     /**
      * The main where file components are called,
@@ -31,7 +30,7 @@ public class Main
      */
     public static void main(String[] args)
     {
-        ArrayList<Grades> grades = readGradesFromXMLwithoutPrint(filepath);
+        ArrayList<Grades> grades = readGradesFromXMLwithoutPrint(file);
         menu(grades);
         //out.println(grades);
     }
@@ -67,7 +66,7 @@ public class Main
                 case 5 -> avg();
                 case 6 -> kki();
             }
-            saveGradestoXML(grades, filepath);
+            saveGradestoXML(grades, file);
         }
     }
 
@@ -96,7 +95,7 @@ public class Main
         {
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            Document document = documentBuilder.parse(filepath);
+            Document document = documentBuilder.parse(file);
 
             Element rootElement = document.getDocumentElement();
             NodeList childNodeList = rootElement.getChildNodes();
@@ -106,13 +105,17 @@ public class Main
             {
                 node = childNodeList.item(i);
 
-                if(node.getNodeType() == Node.ELEMENT_NODE){
+                if(node.getNodeType() == Node.ELEMENT_NODE)
+                {
                     NodeList childNodesOfGradesTag = node.getChildNodes();
                     String crd ="";
-                    for(int j = 0; j < childNodesOfGradesTag.getLength(); j++){
+                    for(int j = 0; j < childNodesOfGradesTag.getLength(); j++)
+                    {
                         Node childNodeOfGradesTag = childNodesOfGradesTag.item(j);
-                        if(childNodeOfGradesTag.getNodeType() == Node.ELEMENT_NODE){
-                            if (childNodeOfGradesTag.getNodeName().equals("Credit")){
+                        if(childNodeOfGradesTag.getNodeType() == Node.ELEMENT_NODE)
+                        {
+                            if (childNodeOfGradesTag.getNodeName().equals("Credit"))
+                            {
                                 crd = childNodeOfGradesTag.getTextContent();
                             }
                         }
@@ -139,16 +142,18 @@ public class Main
         {
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            Document document = documentBuilder.parse(filepath);
+            Document document = documentBuilder.parse(file);
 
             Element rootElement = document.getDocumentElement();
             NodeList childNodeList = rootElement.getChildNodes();
             Node node;
 
-            for(int i = 0; i < childNodeList.getLength(); i++){
+            for(int i = 0; i < childNodeList.getLength(); i++)
+            {
                 node = childNodeList.item(i);
 
-                if(node.getNodeType() == Node.ELEMENT_NODE){
+                if(node.getNodeType() == Node.ELEMENT_NODE)
+                {
                     NodeList childNodesOfGradesTag = node.getChildNodes();
                     String grd ="", crd ="";
                     for(int j = 0; j < childNodesOfGradesTag.getLength(); j++)
@@ -189,7 +194,7 @@ public class Main
         {
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            Document document = documentBuilder.parse(filepath);
+            Document document = documentBuilder.parse(file);
 
             Element rootElement = document.getDocumentElement();
             NodeList childNodeList = rootElement.getChildNodes();
@@ -247,7 +252,7 @@ public class Main
         {
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            Document document = documentBuilder.parse(filepath);
+            Document document = documentBuilder.parse(file);
 
             Element rootElement = document.getDocumentElement();
             NodeList childNodeList = rootElement.getChildNodes();
@@ -291,7 +296,7 @@ public class Main
         {
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            Document document = documentBuilder.parse(filepath);
+            Document document = documentBuilder.parse(file);
 
             Element rootElement = document.getDocumentElement();
             NodeList childNodeList = rootElement.getChildNodes();
@@ -444,13 +449,13 @@ public class Main
      */
     private static void listGrades()
     {
-        readGradesFromXMLwithPrint(filepath);
+        readGradesFromXMLwithPrint(file);
     }
 
     /**
      * Modified version of reader to print out the content.
      */
-    private static ArrayList<Grades> readGradesFromXMLwithPrint(String filepath1)
+    private static void readGradesFromXMLwithPrint(String filepath1)
     {
         ArrayList<Grades> grade = new ArrayList<>();
         try
@@ -496,7 +501,6 @@ public class Main
         {
             e.printStackTrace();
         }
-        return grade;
     }
 
     /**
@@ -570,7 +574,7 @@ public class Main
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult(new FileOutputStream(filepath));
+            StreamResult result = new StreamResult(new FileOutputStream(filepath1));
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.transform(source, result);
         }
