@@ -86,8 +86,8 @@ public class Main
     }
 
     /**
-     * This helps the KKI(), return the amount of credit you had, not regarding the
-     * incompleteness.
+     * This helps the KKI(), return the amount of credit
+     * you had, not regarding the incompleteness.
      */
     private static double UnderTook()
     {
@@ -129,8 +129,8 @@ public class Main
     }
 
     /**
-     * This helps the KKI(), return the amount of credit you had, but only those credit
-     * count, which is for a subject you completed.
+     * This helps the KKI(), return the amount of credit you had,
+     * but only those credit count, which is for a subject you completed.
      */
     private static double DoneCrd()
     {
@@ -360,7 +360,8 @@ public class Main
     }
 
     /**
-     * Pinpoints the subject you are looking for, and helps the two programs above, this gives them the subject to delete or modify. If no such subject is in the
+     * Pinpoints the subject you are looking for, and helps the two programs above,
+     * this gives them the subject to delete or modify. If no such subject is in the
      * grades.xml, will return with an error.
      */
     private static Grades findGrade(ArrayList<Grades> grade, String sub) throws IllegalArgumentException
@@ -384,7 +385,8 @@ public class Main
     }
 
     /**
-     * Sub-program of addNewGrade(), this adds the grade, makes sure it is an integer between 1 and 5, else gives an error message.
+     * Sub-program of addNewGrade(), this adds the grade, makes sure
+     * it is an integer between 1 and 5, else gives an error message.
      */
     private static int inputGrd()
     {
@@ -487,7 +489,8 @@ public class Main
     }
 
     /**
-     * Original reader, this is the base of the modified version, reads the contents of the XML file.
+     * Original reader, this is the base of the modified
+     * version, reads the contents of the XML file.
      */
     private static ArrayList<Grades> readGradesFromXMLwithoutPrint(String filepath1)
     {
@@ -535,7 +538,8 @@ public class Main
     }
 
     /**
-     * Saves the modifications of the grades.xml to the same file, basically updates the file.
+     * Saves the modifications of the grades.xml to the
+     * same file, basically updates the file.
      */
     private static void saveGradestoXML(ArrayList<Grades> grade, String filepath1)
     {
@@ -566,7 +570,8 @@ public class Main
     }
 
     /**
-     * Sub-program of the program, which updates the grades.xml. Creates a child element.
+     * Sub-program of the program, which updates the grades.xml.
+     * Creates a child element.
      */
     private static void childElement(Document document, Element par, String tag, String text)
     {
