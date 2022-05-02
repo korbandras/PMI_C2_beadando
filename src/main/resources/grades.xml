@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Semester>
+    <Sub>
+        <Subject>Kalkulus 1</Subject>
+        <Credit>5</Credit>
+        <Grade>2</Grade>
+    </Sub>
+    <Sub>
+        <Subject>Számítógépes Architektúrák</Subject>
+        <Credit>2</Credit>
+        <Grade>4</Grade>
+    </Sub>
+    <Sub>
+        <Subject>Programozás 1</Subject>
+        <Credit>6</Credit>
+        <Grade>2</Grade>
+    </Sub>
+    <Sub>
+        <Subject>Diszkrét Matematika</Subject>
+        <Credit>6</Credit>
+        <Grade>4</Grade>
+    </Sub>
+    <Sub>
+        <Subject>Formális Nyelvek és Automaták</Subject>
+        <Credit>5</Credit>
+        <Grade>2</Grade>
+    </Sub>
+    <Sub>
+        <Subject>Matematikai Logika</Subject>
+        <Credit>2</Credit>
+        <Grade>2</Grade>
+    </Sub>
+    <Sub>
+        <Subject>Elemi Lineáris Algebra</Subject>
+        <Credit>5</Credit>
+        <Grade>4</Grade>
+    </Sub>
+    <Sub>
+        <Subject>Elemi Programozás</Subject>
+        <Credit>4</Credit>
+        <Grade>3</Grade>
+    </Sub>
+</Semester>
