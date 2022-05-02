@@ -43,7 +43,7 @@ public class Main
      */
     private static void menu(ArrayList<Grades> grades)
     {
-        int choice = -1;
+        int choice = 0;
         while(choice != 7)
         {
             out.println("1 - List Subjects and Grades\r\n2 - Add New Subject\r\n3 - Modify Subject\r\n" +
