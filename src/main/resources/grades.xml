@@ -40,4 +40,14 @@
         <Credit>4</Credit>
         <Grade>3</Grade>
     </Sub>
+    <Sub>
+        <Subject>Diszkrét matematika 2</Subject>
+        <Credit>5</Credit>
+        <Grade>4</Grade>
+    </Sub>
+    <Sub>
+        <Subject>Programozás 2</Subject>
+        <Credit>6</Credit>
+        <Grade>1</Grade>
+    </Sub>
 </Semester>

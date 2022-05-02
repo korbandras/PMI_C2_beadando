@@ -82,7 +82,7 @@ public class Main
         //out.println(DoneCrd());
         //out.println(UnderTook());
         kki = (sumOfDoneTimesGrade()/devider)*(DoneCrd()/UnderTook());
-        out.printf("Your KKI based on Grades.xml is: %.2f", kki);
+        out.printf("Your KKI based on Grades.xml is: %.2f\n", kki);
     }
 
     /**
