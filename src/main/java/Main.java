@@ -81,7 +81,8 @@ public class Main
         //out.println(DoneCrd());
         //out.println(UnderTook());
         kki = (sumOfDoneTimesGrade()/devider)*(DoneCrd()/UnderTook());
-        out.printf("Your KKI based on Grades.xml is: %.2f\n", kki);
+        out.printf("Your KKI based on Grades.xml is: %.2f\r\n", kki);
+        out.println();
     }
 
     /**
@@ -239,7 +240,8 @@ public class Main
         double avg = gradesSum(/*grades*/)/gradesNo(/*grades*/);
         //out.println(gradesSum(grades));
         //out.println(gradesNo(grades));
-        out.printf("Average of the grades: %.2f\n", avg);
+        out.printf("Average of the grades: %.2f\r\n", avg);
+        out.println();
     }
 
     /**
@@ -341,10 +343,13 @@ public class Main
         try
         {
             grades.remove(findGrade(grades, be.nextLine()));
+            out.println("Subject deleted.");
+            out.println();
         }
         catch (IllegalArgumentException e)
         {
             out.println(e.getMessage());
+            out.println();
         }
     }
 
@@ -358,10 +363,13 @@ public class Main
         {
             Grades grades1 = findGrade(grades, be.nextLine());
             grades.set(grades.indexOf(grades1), new Grades(grades1.getSubject(), inputCrd(), inputGrd()));
+            out.println("Subject changed.");
+            out.println();
         }
         catch (IllegalArgumentException e)
         {
             out.println(e.getMessage());
+            out.println();
         }
     }
 
@@ -388,6 +396,8 @@ public class Main
     private static void addNewGrade(ArrayList<Grades> grades)
     {
         grades.add(new Grades(inputSub(), inputCrd(), inputGrd()));
+        out.println("New subject added.");
+        out.println();
     }
 
     /**
@@ -439,7 +449,7 @@ public class Main
     private static String inputSub()
     {
         String sub;
-        out.print("Name of new subject:");
+        out.print("Name of new subject: ");
         sub = be.nextLine();
         return sub;
     }
@@ -450,6 +460,7 @@ public class Main
     private static void listGrades()
     {
         readGradesFromXMLwithPrint(file);
+        out.println();
     }
 
     /**
@@ -481,7 +492,8 @@ public class Main
                         Node childNodeOfGradesTag = childNodesOfGradesTag.item(j);
                         if(childNodeOfGradesTag.getNodeType() == Node.ELEMENT_NODE)
                         {
-                            switch (childNodeOfGradesTag.getNodeName()){
+                            switch (childNodeOfGradesTag.getNodeName())
+                            {
                                 case "Subject" -> sub = childNodeOfGradesTag.getTextContent();
                                 case "Credit" -> crd = childNodeOfGradesTag.getTextContent();
                                 case "Grade" -> grd = childNodeOfGradesTag.getTextContent();
